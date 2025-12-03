@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Cocktails</title>
+<title>Cocktailkarte</title>
 <style>
   body { 
     font-family: Arial, sans-serif; 
@@ -10,6 +10,7 @@
     padding: 20px; 
     color: #333;
   }
+  h1 { text-align: center; color: #c0392b; margin-bottom: 30px; }
   section { 
     margin-bottom: 20px; 
     background: #f8d7da; /* világospiros szekció */
@@ -17,14 +18,15 @@
     border-radius: 8px; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
   }
-  h1 { text-align: center; color: #c0392b; }
   h2 { 
-    color: #c0392b; /* erősebb piros a címeknek */
+    color: #c0392b; 
     border-bottom: 2px solid #c0392b; 
     padding-bottom: 5px; 
+    margin-bottom: 10px;
   }
-  ul { list-style-type: none; padding-left: 0; }
-  li { padding: 5px 0; }
+  ul { list-style-type: none; padding-left: 0; margin: 0; }
+  li { padding: 5px 0; border-bottom: 1px solid #eee; }
+  li:last-child { border-bottom: none; }
 </style>
 </head>
 <body>
@@ -33,41 +35,45 @@
 
 <section id="klassiker">
   <h2>Klassiker</h2>
-  <ul></ul>
+  <ul>
+    <li>Mojito</li>
+    <li>Caipirinha</li>
+    <li>Old Fashioned</li>
+  </ul>
 </section>
 
 <section id="aperitif">
   <h2>Aperitif</h2>
-  <ul></ul>
+  <ul>
+    <li>Aperol Spritz</li>
+    <li>Hugo Spritz</li>
+    <li>Limoncello Spritz</li>
+    <li>Campari Spritz</li>
+    <li>Campari Orange</li>
+    <li>Negroni</li>
+    <li>Lillet Vive</li>
+    <li>Kir Royale</li>
+    <li>Mimosa</li>
+  </ul>
 </section>
 
 <section id="dessert">
   <h2>Dessert</h2>
-  <ul></ul>
+  <ul>
+    <li>Brandy Alexander</li>
+    <li>Grasshopper</li>
+    <li>Espresso Martini</li>
+  </ul>
 </section>
 
 <section id="signature">
   <h2>Signature</h2>
-  <ul></ul>
+  <ul>
+    <li>Purple Rain</li>
+    <li>Golden Touch</li>
+    <li>Firefly</li>
+  </ul>
 </section>
-
-<script>
-  const cocktails = {
-    klassiker: ["Mojito", "Caipirinha", "Old Fashioned"],
-    aperitif: ["Aperol Spritz","Hugo Spritz","Limoncello Spritz","Campari Spritz","Campari Orange","Negroni","Lillet Vive","Kir Royale","Mimosa"],
-    dessert: ["Brandy Alexander","Espresso Martini"],
-    signature: ["", "", ""]
-  };
-
-  for (const category in cocktails) {
-    const ul = document.querySelector(`#${category} ul`);
-    cocktails[category].forEach(drink => {
-      const li = document.createElement("li");
-      li.textContent = drink;
-      ul.appendChild(li);
-    });
-  }
-</script>
 
 </body>
 </html>
