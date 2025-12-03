@@ -2,73 +2,197 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Cocktails</title>
+<title>Cocktailkarte</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
 <style>
+  /* Alap body és betűtípus */
   body { 
-    font-family: Arial, sans-serif; 
-    background: #fff0f0; /* halvány világospiros háttér */
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #d88d37; /* halvány krém, meleg tónus */
+    margin: 0; 
     padding: 20px; 
     color: #333;
   }
-  section { 
-    margin-bottom: 20px; 
-    background: #f8d7da; /* világospiros szekció */
-    padding: 15px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+
+  /* Főcím */
+h1 {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  color: #c0392b;
+  font-size: 3.5em;
+  display: inline-block;
+  background-color: rgba(255, 200, 200, 0.3);
+  border: 4px solid #c0392b;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  
+  font-style: italic; 
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.2); /* árnyék a 3D hatásért */
+}
+
+  /* Kategória címek */
+h2 {
+  font-family: 'Roboto Slab', serif;
+  color: #c0392b;
+  display: inline-block;
+  border-bottom: 2px solid #c0392b;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 3em;
+  font-weight: 900; /* nagyon vastag Roboto Slab */
+}
+/* Signature-Kreationen */
+#signature {
+  background-color: #fcd5d5; /* halvány rózsás piros */
+}
+
+/* Aperitif */
+#aperitif {
+  background-color: #ffe5b4; /* világos narancs */
+}
+
+/* Klassiker / All-Time Favourites */
+#klassiker {
+  background-color: #fff3b0; /* világos sárga */
+}
+
+/* Dessert */
+#dessert {
+  background-color: #fce1f0; /* halvány rózsaszín árnyalat */
+}
+
+/* Ohne Alcohol / Mocktails */
+#ohneAlcohol {
+  background-color: #d4f4dd; /* halvány zöld árnyalat, frissítő */
+}
+
+/* Közös stílus minden section-höz */
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(229, 0, 0, 0.772);
+
+  /* vékony keret a szekciók körül */
+  border: 2px solid rgb(223, 32, 32); /* halvány szürke, finom hatás */
+}
+
+/* Koktél neve */
+.cocktail span {
+  color: #c0392b; /* piros */
+  font-weight: 700; /* félkövér */
+  font-size: 1.4em; /* kicsit nagyobb */
+  display: block;
+  margin-bottom: 5px; /* kis távolság a hozzávalóktól */
+}
+
+/* Hozzávalók */
+.desc {
+  color: #000; /* fekete */
+  font-size: 1em; /* egy kicsit nagyobb */
+  margin-left: 10px;
+  line-height: 1.5; /* nagyobb sorköz a jobb áttekinthetőségért */
+  font-weight: 400; /* sima, nem félkövér */
+  margin-bottom: 10px; /* kicsi távolság a sorok között */
+}
+  
+  /* Reszponzív design telefonra */
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    .cocktail span { font-size: 1.1em; }
+    .desc { font-size: 0.9em; }
+    section { padding: 15px; }
   }
-  h1 { text-align: center; color: #c0392b; }
-  h2 { 
-    color: #c0392b; /* erősebb piros a címeknek */
-    border-bottom: 2px solid #c0392b; 
-    padding-bottom: 5px; 
-  }
-  ul { list-style-type: none; padding-left: 0; }
-  li { padding: 5px 0; }
 </style>
+
 </head>
+
 <body>
 
-<h1>Cocktailkarte</h1>
+<h1>Unsere Cocktail-Empfehlungen</h1>
 
-<section id="klassiker">
-  <h2>Klassiker</h2>
-  <ul></ul>
-</section>
 
-<section id="aperitif">
-  <h2>Aperitif</h2>
-  <ul></ul>
-</section>
-
-<section id="dessert">
-  <h2>Dessert</h2>
-  <ul></ul>
-</section>
-
+<!-- SIGNATURE -->
 <section id="signature">
-  <h2>Signature</h2>
-  <ul></ul>
+<h2>Signature-Kreationen</h2>
+<ul>
+<li><div class="cocktail"><span>Alpenblüte</span></div><div class="desc">Gin, Holunder, Zitrone, Prosecco</div></li>
+<li><div class="cocktail"><span>Himbeertraum</span></div><div class="desc">Rum, Himbeerpüre, Zitrone, Zucker</div></li>
+<li><div class="cocktail"><span>Bergpfad</span></div><div class="desc">Whisky, Apfelsaft, Zucker, Zitrone</div></li>
+<li><div class="cocktail"><span>Bergpirat</span></div><div class="desc">Rum, Orange, Lime, Zimtsirup</div></li>
+</ul>
 </section>
 
-<script>
-  const cocktails = {
-    klassiker: ["Mojito", "Caipirinha", "Old Fashioned"],
-    aperitif: ["Aperol Spritz","Hugo Spritz","Limoncello Spritz","Limoncello Spritz","Campari Spritz","Campari Orange","Negroni","Lillet Vive","Kir Royale""Mimosa"],
-    dessert: ["Brandy Alexander", "", "Espresso Martini"],
-    signature: ["", "", ""]
-  };
 
-  for (const category in cocktails) {
-    const ul = document.querySelector(`#${category} ul`);
-    cocktails[category].forEach(drink => {
-      const li = document.createElement("li");
-      li.textContent = drink;
-      ul.appendChild(li);
-    });
-  }
-</script>
+<!-- APERITIF -->
+<section id="aperitif">
+<h2>Aperitif</h2>
+<ul>
+<li><div class="cocktail"><span>Aperol Spritz</span></div><div class="desc">Aperol, Prosecco, Soda, Orange</div></li>
+<li><div class="cocktail"><span>Hugo Spritz</span></div><div class="desc">Holunder, Minze, Prosecco, Lime</div></li>
+<li><div class="cocktail"><span>Limoncello Spritz</span></div><div class="desc">Limoncello, Prosecco, Soda</div></li>
+<li><div class="cocktail"><span>Campari Spritz</span></div><div class="desc">Campari, Prosecco, Soda</div></li>
+<li><div class="cocktail"><span>Campari Orange</span></div><div class="desc">Campari, Orangensaft</div></li>
+<li><div class="cocktail"><span>Cynar Orange</span></div><div class="desc">Cynar, Orangensaft</div></li>
+<li><div class="cocktail"><span>Negroni</span></div><div class="desc">Gin, Campari, Roter Wermut</div></li>
+<li><div class="cocktail"><span>Lillet Vive</span></div><div class="desc">Lillet, Gurke, Minze, Tonic</div></li>
+<li><div class="cocktail"><span>Kir Royale</span></div><div class="desc">Crème de Cassis, Prosecco</div></li>
+<li><div class="cocktail"><span>French 75</span></div><div class="desc">Gin, Zitrone, Zucker, Prosecco</div></li>
+<li><div class="cocktail"><span>Mimosa</span></div><div class="desc">Orangensaft, Prosecco</div></li>
+</ul>
+</section>
+
+
+<!-- KLASSIKER -->
+<section id="klassiker">
+<h2>All-Time Favourites</h2>
+<ul>
+<li><div class="cocktail"><span>Caipirinha</span></div><div class="desc">Cachaça, Limette, Zucker</div></li>
+<li><div class="cocktail"><span>Dark'n Stormy</span></div><div class="desc">Rum, Ginger Beer, Limette</div></li>
+<li><div class="cocktail"><span>Daiquiri</span></div><div class="desc">Rum, Limette, Zucker</div></li>
+<li><div class="cocktail"><span>Sex on the Beach</span></div><div class="desc">Vodka, Pfirsichlikör, Orange, Grenadine</div></li>
+<li><div class="cocktail"><span>Pina Colada</span></div><div class="desc">Rum, Kokossirup, Ananas</div></li>
+<li><div class="cocktail"><span>Singapore Sling</span></div><div class="desc">Gin, Kirschlikör, Cointreau, Grenadine, Ananas</div></li>
+<li><div class="cocktail"><span>London Mule</span></div><div class="desc">Gin, Ginger Beer, Limette</div></li>
+<li><div class="cocktail"><span>Moscow Mule</span></div><div class="desc">Vodka, Ginger Beer, Limette</div></li>
+<li><div class="cocktail"><span>Margarita</span></div><div class="desc">Tequila, Triple Sec, Limette</div></li>
+<li><div class="cocktail"><span>Tequila Sunrise</span></div><div class="desc">Tequila, Orange, Grenadine</div></li>
+<li><div class="cocktail"><span>Mojito</span></div><div class="desc">Rum, Minze, Limette, Soda</div></li>
+<li><div class="cocktail"><span>Whiskey Sour</span></div><div class="desc">Whiskey, Zitrone, Zucker</div></li>
+<li><div class="cocktail"><span>Old Fashioned</span></div><div class="desc">Whiskey, Zucker, Angostura Bitter</div></li>
+<li><div class="cocktail"><span>Boulevardier</span></div><div class="desc">Whiskey, Campari, Roter Wermut</div></li>
+<li><div class="cocktail"><span>Manhattan</span></div><div class="desc">Whiskey, Roter Wermut, Angostura Bitter</div></li>
+<li><div class="cocktail"><span>Whiskey Smash</span></div><div class="desc">Whiskey, Minze, Zitrone, Zucker</div></li>
+<li><div class="cocktail"><span>Bloody Mary</span></div><div class="desc">Vodka, Tomatensaft, Zitrone, Gewürze, Tabasco</div></li>
+</ul>
+</section>
+
+
+<!-- DESSERT -->
+<section id="dessert">
+<h2>Dessert oder After-Dinner</h2>
+<ul>
+<li><div class="cocktail"><span>Espresso Martini</span></div><div class="desc">Vodka, Kaffee, Kaffeelikör</div></li>
+<li><div class="cocktail"><span>White Russian</span></div><div class="desc">Vodka, Kaffeelikör, Sahne</div></li>
+<li><div class="cocktail"><span>Brandy Alexander</span></div><div class="desc">Brandy, Kakao Likör, Sahne</div></li>
+<li><div class="cocktail"><span>Baileys Alexander</span></div><div class="desc">Baileys, Kakao Likör, Sahne</div></li>
+<li><div class="cocktail"><span>Amaretto Sour</span></div><div class="desc">Amaretto, Zitrone, Zucker</div></li>
+</ul>
+</section>
+
+<!-- Ohne Alcohol -->
+<section id="ohneAlcohol">
+  <h2>Mocktails-Ohne Alcohol</h2>
+    <ul>
+      <li><div class="cocktail"><span>Virgin Mojito</span></div><div class="desc">Minze, Limette, Brauner Zucker, Limonade</div></li>
+      <li><div class="cocktail"><span>Virgin Colada</span></div><div class="desc">Ananas, Kokossirup, Zitronensaft</div></li>
+      <li><div class="cocktail"><span>San Francisco</span></div><div class="desc">Orangensaft, Ananassaft, Zitronensaft, Grenadinesirup</div></li>
+      <li><div class="cocktail"><span>Gin and Berry</span></div><div class="desc">Alkoholfreier Gin, Erfrischende Beeren, Limonade</div></li>
+    </ul> 
+</section>
 
 </body>
-</html>
-
+</html>S
