@@ -8,69 +8,109 @@
   /* Alap body és betűtípus */
   body { 
     font-family: 'Montserrat', sans-serif; 
-    background-color: #fff0f0; /* halvány világospiros háttér */
+    background-color: #d88d37; /* halvány krém, meleg tónus */
     margin: 0; 
     padding: 20px; 
     color: #333;
   }
 
   /* Főcím */
-  h1 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    color: #c0392b; /* erősebb piros */
-    font-size: 2.5em;
-    margin-bottom: 30px;
-  }
-
-  /* Szekciók */
-  section { 
-    margin-bottom: 20px; 
-    background-color: #f8d7da; /* világospiros szekció */
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-  }
+h1 {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  color: #c0392b;
+  font-size: 3.5em;
+  display: inline-block;
+  background-color: rgba(255, 200, 200, 0.3);
+  border: 4px solid #c0392b;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  
+  font-style: italic; 
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.2); /* árnyék a 3D hatásért */
+}
 
   /* Kategória címek */
-  h2 { 
-    font-family: 'Raleway', sans-serif;
-    color: #c0392b;
-    border-bottom: 2px solid #c0392b;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-  }
+h2 {
+  font-family: 'Roboto Slab', serif;
+  color: #c0392b;
+  display: inline-block;
+  border-bottom: 2px solid #c0392b;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 3em;
+  font-weight: 900; /* nagyon vastag Roboto Slab */
+}
+/* Signature-Kreationen */
+#signature {
+  background-color: #fcd5d5; /* halvány rózsás piros */
+}
 
-  /* Lista stílus */
-  ul { 
-    list-style-type: none; 
-    padding-left: 0; 
-    margin: 0;
-  }
+/* Aperitif */
+#aperitif {
+  background-color: #ffe5b4; /* világos narancs */
+}
 
-  li { 
-    padding: 8px 0; 
-    border-bottom: 1px solid #eee; 
-    font-size: 1.1em;
-  }
-  
-  li:last-child { 
-    border-bottom: none; 
-  }
+/* Klassiker / All-Time Favourites */
+#klassiker {
+  background-color: #fff3b0; /* világos sárga */
+}
+
+/* Dessert */
+#dessert {
+  background-color: #fce1f0; /* halvány rózsaszín árnyalat */
+}
+
+/* Ohne Alcohol / Mocktails */
+#ohneAlcohol {
+  background-color: #d4f4dd; /* halvány zöld árnyalat, frissítő */
+}
+
+/* Közös stílus minden section-höz */
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(229, 0, 0, 0.772);
+
+  /* vékony keret a szekciók körül */
+  border: 2px solid rgb(223, 32, 32); /* halvány szürke, finom hatás */
+}
+
+/* Koktél neve */
+.cocktail span {
+  color: #c0392b; /* piros */
+  font-weight: 700; /* félkövér */
+  font-size: 1.4em; /* kicsit nagyobb */
+  display: block;
+  margin-bottom: 5px; /* kis távolság a hozzávalóktól */
+}
+
+/* Hozzávalók */
+.desc {
+  color: #000; /* fekete */
+  font-size: 1em; /* egy kicsit nagyobb */
+  margin-left: 10px;
+  line-height: 1.5; /* nagyobb sorköz a jobb áttekinthetőségért */
+  font-weight: 400; /* sima, nem félkövér */
+  margin-bottom: 10px; /* kicsi távolság a sorok között */
+}
   
   /* Reszponzív design telefonra */
   @media (max-width: 600px) {
     body { padding: 10px; }
     h1 { font-size: 2em; }
     h2 { font-size: 1.5em; }
-    li { font-size: 1em; }
+    .cocktail span { font-size: 1.1em; }
+    .desc { font-size: 0.9em; }
     section { padding: 15px; }
   }
-  </style>
-</head>
-<body>
+</style>
 
+</head>
+
+<body>
 
 <h1>Unsere Cocktail-Empfehlungen</h1>
 
@@ -79,10 +119,10 @@
 <section id="signature">
 <h2>Signature-Kreationen</h2>
 <ul>
-<li><div class="cocktail"><span>Alpenblüte</span></div><div class="desc">Gin, Holunder, Zitrone, Soda</div></li>
-<li><div class="cocktail"><span>Himbeertraum</span></div><div class="desc">Rum, Himbeer, Limette, Rohrzucker</div></li>
-<li><div class="cocktail"><span>Bergpfad</span></div><div class="desc">Whisky, Apfel, Honig, Kräuter</div></li>
-<li><div class="cocktail"><span>Bergpirat</span></div><div class="desc">Rum, Vanille, Maracuja, Lime</div></li>
+<li><div class="cocktail"><span>Alpenblüte</span></div><div class="desc">Gin, Holunder, Zitrone, Prosecco</div></li>
+<li><div class="cocktail"><span>Himbeertraum</span></div><div class="desc">Rum, Himbeerpüre, Zitrone, Zucker</div></li>
+<li><div class="cocktail"><span>Bergpfad</span></div><div class="desc">Whisky, Apfelsaft, Zucker, Zitrone</div></li>
+<li><div class="cocktail"><span>Bergpirat</span></div><div class="desc">Rum, Orange, Lime, Zimtsirup</div></li>
 </ul>
 </section>
 
