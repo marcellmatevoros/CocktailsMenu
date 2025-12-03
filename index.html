@@ -4,92 +4,71 @@
 <meta charset="UTF-8">
 <title>Cocktails</title>
 <style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f4ef;
+  body { 
+    font-family: Arial, sans-serif; 
+    background: #fff0f0; /* halvány világospiros háttér */
+    padding: 20px; 
     color: #333;
-    margin: 0;
-    padding: 0;
   }
-
-  header {
-    background-color: #8e44ad;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 2em;
-    font-weight: bold;
+  section { 
+    margin-bottom: 20px; 
+    background: #f8d7da; /* világospiros szekció */
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
   }
-
-  section {
-    margin: 20px auto;
-    max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  h1 { text-align: center; color: #c0392b; }
+  h2 { 
+    color: #c0392b; /* erősebb piros a címeknek */
+    border-bottom: 2px solid #c0392b; 
+    padding-bottom: 5px; 
   }
-
-  section h2 {
-    color: #8e44ad;
-    border-bottom: 2px solid #8e44ad;
-    padding-bottom: 5px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-
-  ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 1.1em;
-  }
-
-  ul li:last-child {
-    border-bottom: none;
-  }
+  ul { list-style-type: none; padding-left: 0; }
+  li { padding: 5px 0; }
 </style>
 </head>
 <body>
-<header>Cocktailkarte</header>
 
-<section>
+<h1>Cocktailkarte</h1>
+
+<section id="klassiker">
   <h2>Klassiker</h2>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <ul></ul>
 </section>
 
-<section>
+<section id="aperitif">
   <h2>Aperitif</h2>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <ul></ul>
 </section>
 
-<section>
+<section id="dessert">
   <h2>Dessert</h2>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <ul></ul>
 </section>
 
-<section>
+<section id="signature">
   <h2>Signature</h2>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
+  <ul></ul>
 </section>
+
+<script>
+  const cocktails = {
+    klassiker: ["Mojito", "Caipirinha", "Old Fashioned"],
+    aperitif: ["Aperol Spritz","Hugo Spritz","Limoncello Spritz","Limoncello Spritz","Campari Spritz","Campari Orange","Negroni","Lillet Vive","Kir Royale""Mimosa"],
+    dessert: ["Brandy Alexander", "", "Espresso Martini"],
+    signature: ["", "", ""]
+  };
+
+  for (const category in cocktails) {
+    const ul = document.querySelector(`#${category} ul`);
+    cocktails[category].forEach(drink => {
+      const li = document.createElement("li");
+      li.textContent = drink;
+      ul.appendChild(li);
+    });
+  }
+</script>
 
 </body>
 </html>
+
