@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <title>Cocktailkarte</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&family=Titan+One&display=swap">
 <style>
   /* Alap body és betűtípus */
   body { 
     font-family: 'Montserrat', sans-serif; 
-    background-color: #d88d37; /* halvány krém, meleg tónus */
+    background-color: #eab85b; /* halvány krém, meleg tónus */
     margin: 0; 
     padding: 20px; 
     color: #333;
@@ -16,32 +17,42 @@
 
   /* Főcím */
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Titan One', cursive;
   text-align: center;
   color: #c0392b;
   font-size: 3.5em;
   display: inline-block;
-  background-color: rgba(255, 200, 200, 0.3);
+  background-color: rgb(233, 253, 255);
   border: 4px solid #c0392b;
+  box-shadow: 0 4px 10px rgba(229, 0, 0, 0.772); /* ugyanaz a piros LED shadow mint a h2 körül */
   border-radius: 12px;
   padding: 10px 20px;
   margin-bottom: 30px;
-  
   font-style: italic; 
   text-shadow: 3px 3px 5px rgba(0,0,0,0.2); /* árnyék a 3D hatásért */
 }
 
   /* Kategória címek */
 h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Titan One', cursive;
   color: #c0392b;
-  display: inline-block;
+  display: flex;                 /* flex sorban */
+  justify-content: space-between; /* cím balra, ár jobbra */
+  align-items: center;           /* középre függőlegesen */
   border-bottom: 2px solid #c0392b;
   padding-bottom: 5px;
   margin-bottom: 20px;
   font-size: 3em;
-  font-weight: 900; /* nagyon vastag Roboto Slab */
+  font-weight: 900;
+  text-decoration: none;         /* semmi aláhúzás */
 }
+
+.price {
+  font-size: 0.8em; /* kisebb, mint a h2 */
+  color: #c0392b;
+  text-decoration: none;          /* semmi aláhúzás */
+}
+
 /* Signature-Kreationen */
 #signature {
   background-color: #fcd5d5; /* halvány rózsás piros */
@@ -84,14 +95,14 @@ section {
   font-weight: 700; /* félkövér */
   font-size: 1.4em; /* kicsit nagyobb */
   display: block;
-  margin-bottom: 5px; /* kis távolság a hozzávalóktól */
+  margin-bottom: 3px; /* kis távolság a hozzávalóktól */
 }
 
 /* Hozzávalók */
 .desc {
   color: #000; /* fekete */
-  font-size: 1em; /* egy kicsit nagyobb */
-  margin-left: 10px;
+  font-size: 20px; /* egy kicsit nagyobb */
+  margin-left: 7px;
   line-height: 1.5; /* nagyobb sorköz a jobb áttekinthetőségért */
   font-weight: 400; /* sima, nem félkövér */
   margin-bottom: 10px; /* kicsi távolság a sorok között */
@@ -117,7 +128,7 @@ section {
 
 <!-- SIGNATURE -->
 <section id="signature">
-<h2>Signature-Kreationen</h2>
+<h2>Signature-Kreationen<span class="price">14CHF</span></h2>
 <ul>
 <li><div class="cocktail"><span>Alpenblüte</span></div><div class="desc">Gin, Holunder, Zitrone, Prosecco</div></li>
 <li><div class="cocktail"><span>Himbeertraum</span></div><div class="desc">Rum, Himbeerpüre, Zitrone, Zucker</div></li>
@@ -129,7 +140,7 @@ section {
 
 <!-- APERITIF -->
 <section id="aperitif">
-<h2>Aperitif</h2>
+<h2>Aperitif<span class="price">13CHF</span></h2>
 <ul>
 <li><div class="cocktail"><span>Aperol Spritz</span></div><div class="desc">Aperol, Prosecco, Soda, Orange</div></li>
 <li><div class="cocktail"><span>Hugo Spritz</span></div><div class="desc">Holunder, Minze, Prosecco, Lime</div></li>
@@ -148,13 +159,13 @@ section {
 
 <!-- KLASSIKER -->
 <section id="klassiker">
-<h2>All-Time Favourites</h2>
+<h2>All-Time Favourites<span class="price">14CHF</span></h2>
 <ul>
 <li><div class="cocktail"><span>Caipirinha</span></div><div class="desc">Cachaça, Limette, Zucker</div></li>
 <li><div class="cocktail"><span>Dark'n Stormy</span></div><div class="desc">Rum, Ginger Beer, Limette</div></li>
 <li><div class="cocktail"><span>Daiquiri</span></div><div class="desc">Rum, Limette, Zucker</div></li>
 <li><div class="cocktail"><span>Sex on the Beach</span></div><div class="desc">Vodka, Pfirsichlikör, Orange, Grenadine</div></li>
-<li><div class="cocktail"><span>Pina Colada</span></div><div class="desc">Rum, Kokossirup, Ananas</div></li>
+<li><div class="cocktail"><span>Piña Colada</span></div><div class="desc">Rum, Kokossirup, Ananas, Limette</div></li>
 <li><div class="cocktail"><span>Singapore Sling</span></div><div class="desc">Gin, Kirschlikör, Cointreau, Grenadine, Ananas</div></li>
 <li><div class="cocktail"><span>London Mule</span></div><div class="desc">Gin, Ginger Beer, Limette</div></li>
 <li><div class="cocktail"><span>Moscow Mule</span></div><div class="desc">Vodka, Ginger Beer, Limette</div></li>
@@ -173,7 +184,7 @@ section {
 
 <!-- DESSERT -->
 <section id="dessert">
-<h2>Dessert oder After-Dinner</h2>
+<h2>Dessert oder After-Dinner<span class="price">14CHF</span></h2>
 <ul>
 <li><div class="cocktail"><span>Espresso Martini</span></div><div class="desc">Vodka, Kaffee, Kaffeelikör</div></li>
 <li><div class="cocktail"><span>White Russian</span></div><div class="desc">Vodka, Kaffeelikör, Sahne</div></li>
@@ -185,7 +196,7 @@ section {
 
 <!-- Ohne Alcohol -->
 <section id="ohneAlcohol">
-  <h2>Mocktails-Ohne Alcohol</h2>
+  <h2>Mocktails-Ohne Alcohol<span class="price">10CHF</span></h2>
     <ul>
       <li><div class="cocktail"><span>Virgin Mojito</span></div><div class="desc">Minze, Limette, Brauner Zucker, Limonade</div></li>
       <li><div class="cocktail"><span>Virgin Colada</span></div><div class="desc">Ananas, Kokossirup, Zitronensaft</div></li>
@@ -193,6 +204,5 @@ section {
       <li><div class="cocktail"><span>Gin and Berry</span></div><div class="desc">Alkoholfreier Gin, Erfrischende Beeren, Limonade</div></li>
     </ul> 
 </section>
-
 </body>
 </html>
